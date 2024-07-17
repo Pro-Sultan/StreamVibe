@@ -2,8 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: 'Times New Roman', Times, serif;
+* {
+  font-family: "Times New Roman", Times, serif;
+  overflow: hidden;
 }
 
+.navbar-head {
+  padding: 10px;
+}
 
+nav {
+  margin-left: -80px;
+}
+
+nav ul li {
+  font-size: 17.5px;
+  padding: 10px;
+}
+nav ul li.active,
+nav ul li:hover {
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+div.toggle {
+  display: none;
+}
+
+div.play {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.play img {
+  width: 350px;
+}
+
+.search-icon,
+.notification-icon {
+  font-size: 25px;
+}
+
+@media screen and (max-width:1075px) {
+  .navbar{
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width:1075px) {
+  .nav-links{
+    display: none;
+    /* display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.5,0,0.5,1);
+    height: 100vh; */
+  }
+
+  /* .nav-links ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 0;
+    padding: 135px;
+    background-color: #111;
+    width: 100%;
+  } */
+  .navbar{
+    margin-top: 15px;
+  }
+  div.toggle{
+    display: block;
+  }
+  div.right_bar{
+    display: none;
+  }
+}
