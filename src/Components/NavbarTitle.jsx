@@ -1,8 +1,8 @@
-import Small_Play_Button from '../assets/images/small-play-button.png'
+import Small_Play_Button from "../assets/images/small-play-button.png";
 
 const NavbarTitle = () => {
   return (
-    <div className="navbar_title text-white align-middle text-center bg-black06 relative text-white ">
+    <div className="navbar_title text-white align-middle text-center bg-black06 relative ">
       <h1 className="text-xxl">The Best Streaming Experience</h1>
       <p className=" navbar-para">
         StreamVibe is the best streaming experience for watching your favorite
@@ -12,9 +12,13 @@ const NavbarTitle = () => {
         watchlists, so you can easily find the content you want to watch.
       </p>
 
-      <button className="bg-red45 text-white small-play-button font-bold" >
-        <img src={Small_Play_Button} alt="" className="small-play-button-image" /> Start
-        Watching Now
+      <button className="bg-red45 text-white small-play-button font-bold">
+        <img
+          src={Small_Play_Button}
+          alt=""
+          className="small-play-button-image"
+        />{" "}
+        Start Watching Now
       </button>
     </div>
   );
