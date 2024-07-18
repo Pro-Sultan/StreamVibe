@@ -12,9 +12,18 @@ import navLinks from "../../Navlinks";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, setIsLoading] = useState(true);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+  const handleSearchClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  const handleNotificationsClick = () => {
+    setIsNotificationsOpen(!isNotificationsOpen);
   };
 
   const isDesktop = useMediaQuery({ query: "(min-width: 800px)" }); // adjust the breakpoint as needed
@@ -33,18 +42,18 @@ const Navbar = () => {
     animation();
   }, []);
 
-  // useEffect(() => {
-  //   try {
-  //     const speech = new SpeechSynthesisUtterance();
-  //     speech.text = "Welcome to StreamVibe";
-  //     speech.lang = "en-US";
-  //     speech.rate = 1;
-  //     speech.volume = 1;
-  //     window.speechSynthesis.speak(speech);
-  //   } catch (error) {
-  //     console.error("Error speaking:", error);
-  //   }
-  // }, []);
+  useEffect(() => {
+    try {
+      const speech = new SpeechSynthesisUtterance();
+      speech.text = "Welcome to StreamVibe";
+      speech.lang = "en-US";
+      speech.rate = 1;
+      speech.volume = 1;
+      window.speechSynthesis.speak(speech);
+    } catch (error) {
+      console.error("Error speaking:", error);
+    }
+  }, []);
 
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
@@ -83,7 +92,7 @@ const Navbar = () => {
               : { x: "-100%", boxShadow: "0px 0px 0px rgba(0,0,0,0)" }
           }
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="nav-links z-50 block tablet:block h-screen w-full text-grey bg-black06 items-center absolute top-60 bottom-0 right-0 left-0"
+          className="nav-links z-50 block tablet:block  w-full text-grey bg-black06 items-center absolute top-60 bottom-0 right-0 left-0 overflow-hidden"
         >
           <ul className="tablet:block space-y-7 tablet:h-screen align-middle text-center">
             {navLinks.map((link, index) => (
@@ -105,8 +114,31 @@ const Navbar = () => {
         </motion.nav>
 
         <div className="right_bar flex space-x-5 items-center">
-          <CiSearch className="search-icon cursor-pointer text-white" />
-          <IoIosNotificationsOutline className="notification-icon cursor-pointer text-white" />
+          <CiSearch
+            className="search-icon cursor-pointer text-white"
+            onClick={handleSearchClick}
+          />
+          {isSearchOpen && (
+            <input
+              type="search"
+              placeholder="Search..."
+              className="search-input bg-white text-grey px-3 py-2 rounded-lg"
+            />
+          )}
+          <IoIosNotificationsOutline
+            className="notification-icon cursor-pointer text-white"
+            onClick={handleNotificationsClick}
+          />
+          {isNotificationsOpen && (
+            <div className="notification-box absolute bg-white rounded-lg p-3 shadow-md">
+              <h5 className="text-lg font-bold mb-2">Notifications</h5>
+              <ul>
+                <li className="text-lg">Notification 1</li>
+                <li className="text-lg">Notification 2</li>
+                <li className="text-lg">Notification 3</li>
+              </ul>
+            </div>
+          )}
         </div>
 
         <div className="toggle" onClick={toggleMenu}>
