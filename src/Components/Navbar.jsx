@@ -1,52 +1,132 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/Logo.png";
 import PlayButton from "../assets/images/Play-Video-Button-2.png";
-import Toggle from '../assets/images/toggle.png'
-import Home from "../pages/Home";
-import Movies from "../pages/Movies";
-import Support from "../pages/Support";
-import Subscription from "../pages/Subscription";
+import Toggle from "../assets/images/toggle.png";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { useEffect, useState, useLayoutEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import { motion } from "framer-motion";
+import navLinks from "../../Navlinks";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [, setIsLoading] = useState(true);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isDesktop = useMediaQuery({ query: "(min-width: 800px)" }); // adjust the breakpoint as needed
+
+  useEffect(() => {
+    if (isDesktop) {
+      setIsMenuOpen(false);
+    }
+  }, [isDesktop]);
+
+  useLayoutEffect(() => {
+    const animation = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 700)); // wait for 500ms
+      setIsLoading(false);
+    };
+    animation();
+  }, []);
+
+  // useEffect(() => {
+  //   try {
+  //     const speech = new SpeechSynthesisUtterance();
+  //     speech.text = "Welcome to StreamVibe";
+  //     speech.lang = "en-US";
+  //     speech.rate = 1;
+  //     speech.volume = 1;
+  //     window.speechSynthesis.speak(speech);
+  //   } catch (error) {
+  //     console.error("Error speaking:", error);
+  //   }
+  // }, []);
+
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
-      <div className="navbar flex justify-between px-20 py-6 ">
+      <div className="navbar flex justify-between px-20 py-6">
         <div className="logo">
           <a href="">
-            <img src={Logo} alt="" />
+            <motion.img
+              src={Logo}
+              alt=""
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            />
           </a>
         </div>
         <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
           <ul className="flex space-x-3">
-            <li className="active">
-              <Link to={Home} className=" text-white ">Home</Link>
-            </li>
-            <li className="cursor-pointer items-center justify-center">
-              <Link to={Movies}>Movies&Shows</Link>
-            </li>
-            <li className="cursor-pointer items-center justify-center">
-              <Link to={Support}>Support</Link>
-            </li>
-            <li className="cursor-pointer items-center justify-center">
-              <Link to={Subscription}>Subscription</Link>
-            </li>
+            {navLinks.map((link, index) => (
+              <Link to={link.href} key={index}>
+                <li>{link.label}</li>
+              </Link>
+            ))}
           </ul>
         </nav>
+
+        <motion.nav
+          initial={{
+            x: isMenuOpen ? 0 : "-100%",
+            boxShadow: isMenuOpen
+              ? "0px 10px 20px rgba(0,0,0,0.2)"
+              : "0px 0px 0px rgba(0,0,0,0)",
+          }}
+          animate={
+            isMenuOpen
+              ? { x: 0, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }
+              : { x: "-100%", boxShadow: "0px 0px 0px rgba(0,0,0,0)" }
+          }
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="nav-links z-50 block tablet:block h-screen w-full text-grey bg-black06 items-center absolute top-60 bottom-0 right-0 left-0"
+        >
+          <ul className="tablet:block space-y-7 tablet:h-screen align-middle text-center">
+            {navLinks.map((link, index) => (
+              <motion.li
+                key={index}
+                initial={{
+                  x: isMenuOpen ? 0 : -20,
+                  opacity: isMenuOpen ? 1 : 0,
+                }}
+                animate={
+                  isMenuOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+                }
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <Link to={link.href}>{link.label}</Link>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.nav>
 
         <div className="right_bar flex space-x-5 items-center">
           <CiSearch className="search-icon cursor-pointer text-white" />
           <IoIosNotificationsOutline className="notification-icon cursor-pointer text-white" />
         </div>
 
-        <div className="toggle">
-            <img src={Toggle} alt="" className="cursor-pointer" />
+        <div className="toggle" onClick={toggleMenu}>
+          <motion.img
+            src={Toggle}
+            alt=""
+            className="cursor-pointer"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          />
         </div>
       </div>
 
-      <div className="play absolute ">
-        <img src={PlayButton} alt="" className="play_video_button cursor-pointer mx-auto" />
+      <div className="play absolute">
+        <motion.img
+          src={PlayButton}
+          alt=""
+          className="play_video_button cursor-pointer mx-auto"
+        />
       </div>
     </div>
   );
