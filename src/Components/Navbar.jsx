@@ -6,10 +6,27 @@ import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import Links from "../JS/Links";
+import Lenis from "@studio-freight/lenis";
 
 const Navbar = () => {
+  const lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  const { scrollYProgress } = useScroll();
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.01,
+  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, setIsLoading] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -65,9 +82,10 @@ const Navbar = () => {
 
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
+      <motion.div className="progress-bar bg-red45" style={{ scaleX }} />
       <div className="navbar flex justify-between px-20 py-6">
         <div className="logo">
-          <Link to="/" >
+          <Link to="/">
             <motion.img
               src={Logo}
               alt=""
