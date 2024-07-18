@@ -7,7 +7,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
-import navLinks from "../../Navlinks";
+import Links from "../JS/Links";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +80,7 @@ const Navbar = () => {
 
         <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
           <ul className="flex space-x-3">
-            {navLinks.map((link, index) => (
+            {Links.map((link, index) => (
               <Link to={link.href} key={index}>
                 <li>{link.label}</li>
               </Link>
@@ -104,7 +104,7 @@ const Navbar = () => {
           className="nav-links z-50 block tablet:block  w-full text-grey bg-black06 items-center absolute top-60 bottom-0 right-0 left-0 overflow-hidden"
         >
           <ul className="tablet:block space-y-7 tablet:h-screen align-middle text-center">
-            {navLinks.map((link, index) => (
+            {Links.map((link, index) => (
               <motion.li
                 key={index}
                 initial={{
