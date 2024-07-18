@@ -7,7 +7,7 @@ export default {
       grey: "#BFBFBF",
       black06: "#0F0F0F",
       black10: "#1A1A1A",
-      tahiti: "#3ab7bf",
+      red45: "#E50000",
       silver: "#ecebff",
       "bubble-gum": "#ff77e9",
       bermuda: "#78dcca",
