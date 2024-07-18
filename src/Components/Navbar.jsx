@@ -151,19 +151,12 @@ const Navbar = () => {
         </div>
 
         <div className="toggle" onClick={toggleMenu}>
-          <motion.img
-            src={Toggle}
-            alt=""
-            className="cursor-pointer"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          />
+          <img src={Toggle} alt="" className="cursor-pointer" />
         </div>
       </div>
 
       <div className="play absolute">
-        <motion.img
+        <img
           src={PlayButton}
           alt=""
           className="play_video_button cursor-pointer mx-auto"
