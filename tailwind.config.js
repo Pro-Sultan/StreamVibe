@@ -26,6 +26,9 @@ export default {
       desktop: "1280px",
       // => @media (min-width: 1280px) { ... }
     },
+    fontSize: {
+      xxl: "2.5rem",
+    },
     extend: {},
   },
   plugins: [],
