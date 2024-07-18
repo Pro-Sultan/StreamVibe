@@ -15,16 +15,10 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-  const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
-
-  const handleNotificationsClick = () => {
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleSearchClick = () => setIsSearchOpen(!isSearchOpen);
+  const handleNotificationsClick = () =>
     setIsNotificationsOpen(!isNotificationsOpen);
-  };
 
   const isDesktop = useMediaQuery({ query: "(min-width: 800px)" }); // adjust the breakpoint as needed
 
@@ -36,7 +30,7 @@ const Navbar = () => {
 
   useLayoutEffect(() => {
     const animation = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 700)); // wait for 500ms
+      await new Promise((resolve) => setTimeout(resolve, 700)); // wait for 700ms
       setIsLoading(false);
     };
     animation();
@@ -55,6 +49,20 @@ const Navbar = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0 && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isMenuOpen]);
+
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
       <div className="navbar flex justify-between px-20 py-6">
@@ -69,6 +77,7 @@ const Navbar = () => {
             />
           </a>
         </div>
+
         <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
           <ul className="flex space-x-3">
             {navLinks.map((link, index) => (
