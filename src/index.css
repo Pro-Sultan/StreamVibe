@@ -4,11 +4,16 @@
 
 * {
   font-family: "Times New Roman", Times, serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .navbar-head {
   padding: 10px;
+}
+
+.navbar-para{
+  padding: 0px 150px;
+  font-size: 19px;
 }
 
 nav {
@@ -45,6 +50,19 @@ div.play img {
   font-size: 25px;
 }
 
+.navbar_title{
+  position: relative;
+  background-color: #1a1a1a;
+  color: white;
+  margin-top: -10px;
+}
+
+.notification-box{
+  top: 100px;
+  right: 90px;
+
+}
+
 
 @media screen and (max-width: 1075px) {
   .navbar {
@@ -54,6 +72,11 @@ div.play img {
   .nav-links {
     margin-left: -0px;
   }
+
+  .navbar-para{
+  padding: 0px 50px;
+}
+
 }
 
 @media screen and (max-width: 800px) {
@@ -66,28 +89,12 @@ div.play img {
   div.toggle {
     display: block;
   }
+  .navbar-para{
+  padding: 0px 10px;
+
+}
 
   div.logo a img {
     width: 170px;
   }
-}
-
-.h-screen {
-  height: 100vh;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.flex {
-  display: flex;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.items-center {
-  align-items: center;
 }
