@@ -67,7 +67,7 @@ const Navbar = () => {
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
       <div className="navbar flex justify-between px-20 py-6">
         <div className="logo">
-          <a href="">
+          <Link to="/" >
             <motion.img
               src={Logo}
               alt=""
@@ -75,7 +75,7 @@ const Navbar = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
-          </a>
+          </Link>
         </div>
 
         <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
