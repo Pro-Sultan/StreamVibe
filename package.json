@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^11.3.6",
+    "framer-motion": "^11.3.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "react-responsive": "^10.0.0",
+    "react-say": "^2.1.1-master.22688e3"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
