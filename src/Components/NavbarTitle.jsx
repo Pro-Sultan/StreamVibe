@@ -1,6 +1,11 @@
 import Small_Play_Button from "../assets/images/small-play-button.png";
 
 const NavbarTitle = () => {
+
+  const handleClick = () => {
+    window.open("/movies", "_blank");
+  };
+
   return (
     <div className="navbar_title text-white align-middle text-center bg-black06 relative ">
       <h1 className="text-xxl">The Best Streaming Experience</h1>
@@ -12,12 +17,16 @@ const NavbarTitle = () => {
         watchlists, so you can easily find the content you want to watch.
       </p>
 
-      <button className="bg-red45 text-white small-play-button font-bold">
+      <button
+        onClick={handleClick}
+        className="bg-red45 text-white small-play-button font-bold"
+      >
+        {" "}
         <img
           src={Small_Play_Button}
           alt=""
           className="small-play-button-image"
-        />{" "}
+        />
         Start Watching Now
       </button>
     </div>
