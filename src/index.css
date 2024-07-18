@@ -121,4 +121,8 @@ div.play img {
   div.logo a img {
     width: 170px;
   }
+  .navbar_title {
+  margin-top: -100px;
+  height: 600px; /* adjust the height to your needs */
+}
 }
