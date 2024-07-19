@@ -53,18 +53,18 @@ const Navbar = () => {
     animation();
   }, []);
 
-  useEffect(() => {
-    try {
-      const speech = new SpeechSynthesisUtterance();
-      speech.text = "Welcome to StreamVibe";
-      speech.lang = "en-US";
-      speech.rate = 1;
-      speech.volume = 1;
-      window.speechSynthesis.speak(speech);
-    } catch (error) {
-      console.error("Error speaking:", error);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     const speech = new SpeechSynthesisUtterance();
+  //     speech.text = "Welcome to StreamVibe";
+  //     speech.lang = "en-US";
+  //     speech.rate = 1;
+  //     speech.volume = 1;
+  //     window.speechSynthesis.speak(speech);
+  //   } catch (error) {
+  //     console.error("Error speaking:", error);
+  //   }
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
