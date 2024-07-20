@@ -8,8 +8,8 @@ export default {
       black06: "#0F0F0F",
       black10: "#1A1A1A",
       red45: "#E50000",
-      silver: "#ecebff",
-      "bubble-gum": "#ff77e9",
+      grey60: "#999999",
+      black15: "#262626",
       bermuda: "#78dcca",
     },
     backgroundImage: {
@@ -27,6 +27,7 @@ export default {
       // => @media (min-width: 1280px) { ... }
     },
     fontSize: {
+      xl: "2rem",
       xxl: "2.5rem",
     },
     extend: {},
