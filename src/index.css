@@ -19,15 +19,13 @@
   margin-bottom: 10px;
 }
 
+explore-para {
+  font-size: 15px;
+}
+
 nav {
   margin-left: -80px;
 }
-
-/* div.navbar {
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-} */
 
 nav ul li {
   font-size: 17.5px;
@@ -71,7 +69,6 @@ div.play img {
 }
 
 .navbar_title {
-  margin-top: -100px;
   height: 400px; /* adjust the height to your needs */
   padding: 20px;
 }
@@ -101,6 +98,99 @@ div.play img {
 .small-play-button-image {
   width: 20px;
 }
+
+div.explore {
+  padding: 0px 70px;
+  padding-bottom: 150px;
+  padding-top: 50px;
+}
+
+div.swipe {
+  padding: 0px 10px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.swipe-right,
+.swipe-left {
+  padding: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  border-radius: 5px;
+}
+
+div.categories {
+  margin-top: 60px;
+}
+
+div.category {
+  padding: 10px;
+  border-radius: 10px;
+}
+.swipe-right:hover,
+.swipe-left:hover {
+  background-color: #e50000;
+}
+
+.category-title {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+}
+
+.category-title img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.category-title:hover {
+  background-color: #1a1a1a;
+  cursor: pointer;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+div.image-box img {
+  width: 100%;
+}
+/* Medium screens (tablet) */
+@media (max-width: 1094px) {
+  .category:nth-child(5),
+  .category:nth-child(4) {
+    display: none;
+  }
+  .categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 860px) {
+  div.explore {
+    padding: 0px 20px;
+    padding-bottom: 150px;
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 590px) {
+  div.explore {
+    padding: 0px 10px;
+    padding-bottom: 150px;
+    padding-top: 50px;
+  }
+
+  .navbar_title {
+    padding-bottom: 500px;
+    /* adjust the height to your needs */
+  }
+}
+
 @media screen and (max-width: 1075px) {
   .navbar {
     padding: 10px;
@@ -116,6 +206,20 @@ div.play img {
 }
 
 @media screen and (max-width: 800px) {
+  div.swipe {
+    display: none;
+  }
+  .category:nth-child(3) {
+    display: none;
+  }
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div.category {
+    padding: 10px;
+    border-radius: 10px;
+  }
   .navbar {
     padding: 6px;
   }
@@ -131,9 +235,5 @@ div.play img {
 
   div.logo a img {
     width: 170px;
-  }
-  .navbar_title {
-    margin-top: -100px;
-    height: 600px; /* adjust the height to your needs */
   }
 }

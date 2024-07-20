@@ -6,7 +6,7 @@ const NavbarTitle = () => {
   };
 
   return (
-    <div className="navbar_title text-white align-middle text-center bg-black06 relative ">
+    <div className="navbar_title text-white align-middle text-center bg-black10 relative ">
       <h1 className="text-xxl">The Best Streaming Experience</h1>
       <p className=" navbar-para">
         StreamVibe is the best streaming experience for watching your favorite

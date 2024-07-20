@@ -1,13 +1,17 @@
+import Explore from "../Components/Explore";
 import Navbar from "../Components/Navbar";
 import NavbarTitle from "../Components/NavbarTitle";
 
 const Home = () => {
   return (
     <div>
-      <Navbar/>
-      <NavbarTitle/>
+      <Navbar />
+      <div className="others">
+        <NavbarTitle />
+        <Explore />
+      </div>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
