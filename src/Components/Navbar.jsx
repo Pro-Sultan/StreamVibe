@@ -32,10 +32,21 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const handleSearchClick = () => setIsSearchOpen(!isSearchOpen);
-  const handleNotificationsClick = () =>
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsNotificationsOpen(false);
+    setIsSearchOpen(false);
+  };
+  const handleSearchClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+    setIsNotificationsOpen(false);
+    setIsMenuOpen(false);
+  };
+  const handleNotificationsClick = () => {
     setIsNotificationsOpen(!isNotificationsOpen);
+    setIsSearchOpen(false);
+    setIsMenuOpen(false);
+  };
 
   const isDesktop = useMediaQuery({ query: "(min-width: 800px)" }); // adjust the breakpoint as needed
 
@@ -66,10 +77,15 @@ const Navbar = () => {
   //   }
   // }, []);
 
+  const handleCloseMenus = () => {
+    setIsMenuOpen(false);
+    setIsSearchOpen(false);
+    setIsNotificationsOpen(false);
+  };
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0 && isMenuOpen) {
-        setIsMenuOpen(false);
+      if (window.scrollY > 0) {
+        handleCloseMenus();
       }
     };
 
@@ -78,10 +94,10 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isMenuOpen]);
+  }, [setIsMenuOpen, setIsSearchOpen, setIsNotificationsOpen]);
 
   return (
-    <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto">
+    <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto p-4">
       <motion.div className="progress-bar bg-red45" style={{ scaleX }} />
       <div className="navbar flex justify-between px-20 py-6">
         <div className="logo">
@@ -149,7 +165,7 @@ const Navbar = () => {
             <input
               type="search"
               placeholder="Search..."
-              className="search-input bg-white text-grey px-3 py-2 rounded-lg"
+              className="search-input bg-white text-grey px-3 py-2 rounded-lg absolute top-[105px] right-[130px]"
             />
           )}
           <IoIosNotificationsOutline
