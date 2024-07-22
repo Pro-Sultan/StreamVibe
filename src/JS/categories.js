@@ -1,5 +1,3 @@
-
-
 const categories = [
   {
     title: "Action",
@@ -20,6 +18,22 @@ const categories = [
   {
     title: "Horror",
     image: "../src/assets/images/fifth_box_image.png",
+  },
+  {
+    title: "Anime",
+    image: "../src/assets/images/seventh_box_image.png",
+  },
+  {
+    title: "Animation",
+    image: "../src/assets/images/eight_box_image.png",
+  },
+  {
+    title: "Cartoon",
+    image: "../src/assets/images/ninth_box_image.png",
+  },
+  {
+    title: "Sci-fi",
+    image: "../src/assets/images/sixth_box_image.png",
   },
 ];
 
