@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import Device from "./Device";
-import Types from "../JS/Types";
+import Types from "../../JS/Types";
 
 const Devices = () => {
   return (

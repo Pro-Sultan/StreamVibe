@@ -1,12 +1,12 @@
-import Explore from "../Components/Explore";
-import Navbar from "../Components/Navbar";
-import NavbarTitle from "../Components/NavbarTitle";
-import Devices from "../Components/Devices";
-import Preloader from "../Components/Preloader"; // Create a new Preloader component
+import Explore from "../Components/Home Component/Explore";
+import Navbar from "../Components/Home Component/Navbar";
+import NavbarTitle from "../Components/Home Component/NavbarTitle";
+import Devices from "../Components/Home Component/Devices";
+import Preloader from "../Components/Home Component/Preloader"; // Create a new Preloader component
 import { useEffect, useState } from "react";
-import Faq from "../Components/Faq";
-import Pricing from "../Components/Plan";
-import Trial from "../Components/Trial";
+import Faq from "../Components/Home Component/Faq";
+import Pricing from "../Components/Home Component/Plan";
+import Trial from "../Components/Home Component/Trial";
 
 
 const Home = () => {

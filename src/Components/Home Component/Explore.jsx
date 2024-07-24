@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
-import SwipeLeftImage from "../assets/images/button-left.png";
-import SwipeRightImage from "../assets/images/button-right.png";
+import SwipeLeftImage from "../../assets/images/button-left.png";
+import SwipeRightImage from "../../assets/images/button-right.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import categories from "../JS/categories";
+import categories from "../../JS/categories";
 import Category from "./Category";
 
 // Import Swiper styles

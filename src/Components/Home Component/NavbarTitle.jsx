@@ -1,4 +1,4 @@
-import Small_Play_Button from "../assets/images/small-play-button.png";
+import Small_Play_Button from "../../assets/images/small-play-button.png";
 
 const NavbarTitle = () => {
   const handleClick = () => {

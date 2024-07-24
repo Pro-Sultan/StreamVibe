@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import plans from "../JS/plans";
+import plans from "../../JS/plans";
 import PlanCard from "./PlanCard";
 
 const Pricing = () => {

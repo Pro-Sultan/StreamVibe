@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/images/Logo.png";
-import PlayButton from "../assets/images/Play-Video-Button-2.png";
-import Toggle from "../assets/images/toggle.png";
+import Logo from "../../assets/images/Logo.png";
+import PlayButton from "../../assets/images/Play-Video-Button-2.png";
+import Toggle from "../../assets/images/toggle.png";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { motion, useScroll, useSpring } from "framer-motion";
-import Links from "../JS/Links";
+import Links from "../../JS/Links";
 import Lenis from "@studio-freight/lenis";
 import Aos from "aos";
 import "aos/dist/aos.css";
