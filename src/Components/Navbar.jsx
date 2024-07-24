@@ -9,8 +9,14 @@ import { useMediaQuery } from "react-responsive";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Links from "../JS/Links";
 import Lenis from "@studio-freight/lenis";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const lenis = new Lenis();
 
   function raf(time) {
@@ -99,7 +105,10 @@ const Navbar = () => {
   return (
     <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto p-4">
       <motion.div className="progress-bar bg-red45" style={{ scaleX }} />
-      <div className="navbar flex justify-between px-20 py-6">
+      <div
+        className="navbar flex justify-between px-20 py-6"
+        data-aos="fade-up"
+      >
         <div className="logo">
           <Link to="/">
             <motion.img
