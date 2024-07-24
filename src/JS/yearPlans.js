@@ -23,5 +23,12 @@ const plans = [
     button1Text: "Start Free Trial",
     button2Text: "Choose Plan",
   },
+  {
+    title: "Mobile",
+    description: "Unlimited ad-free movies, TV shows, and mobile games",
+    price: "2009.88",
+    button1Text: "Start Free Trial",
+    button2Text: "Choose Plan",
+  },
 ];
 export default plans;
