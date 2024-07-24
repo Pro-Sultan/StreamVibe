@@ -1,8 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
 import plans from "../../JS/plans";
 import PlanCard from "./PlanCard";
+import Year from "./Year";
+import yearPlans from "../../JS/yearPlans";
 
 const Pricing = () => {
+  const [planType, setPlanType] = useState("monthly")
+
+  const showYearlyPlans = () => {
+    setPlanType("yearly");
+  }
+
+    const showMonthlyPlans = () => {
+      setPlanType("monthly");
+    };
+
   return (
     <div className="faq bg-black10 text-white">
       <div className="faq-header">
@@ -15,14 +28,22 @@ const Pricing = () => {
         </div>
 
         <div className="plan-button" data-aos="fade-right">
-          <button className="font-bold active">Monthly</button>
-          <button className="font-bold">Yearly</button>
+          <button className="font-bold monthly" onClick={showMonthlyPlans} >
+            Monthly
+          </button>
+          <button className="font-bold yearly" onClick={showYearlyPlans}>
+            Yearly
+          </button>
         </div>
       </div>
       <div className="plans">
-        {plans.map((device) => (
-          <PlanCard key={device.deviceName} {...device} />
-        ))}
+        {planType === "monthly"
+          ? plans.map((device) => (
+              <PlanCard key={device.deviceName} {...device} />
+            ))
+          : yearPlans.map((device) => (
+              <Year key={device.deviceName} {...device} />
+            ))}
       </div>
     </div>
   );

@@ -19,6 +19,7 @@
     "react-icons": "^5.2.1",
     "react-responsive": "^10.0.0",
     "react-say": "^2.1.1-master.22688e3",
+    "react-scroll": "^1.9.0",
     "swiper": "^11.1.5"
   },
   "devDependencies": {

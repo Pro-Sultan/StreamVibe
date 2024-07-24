@@ -378,6 +378,11 @@ div.price-button {
   margin-top: 10px;
 }
 
+button.yearly:focus,
+button.monthly:focus {
+  background-color: #1a1a1a;
+}
+
 div.price-button button:nth-child(1) {
   padding: 10px;
   border-radius: 5px;
@@ -414,6 +419,59 @@ div.trial {
   justify-content: space-between;
 }
 
+footer.footer {
+  padding: 0px 70px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #0f0f0f;
+}
+
+div.container {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 20px;
+}
+div.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3rem;
+  padding-bottom: 40px;
+}
+
+div.row h3 {
+  color: white;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+div.row ul li {
+  margin-bottom: 10px;
+}
+
+.icons ul {
+  display: flex;
+  gap: 10px;
+}
+
+.icons ul li a {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1a1a1a;
+  transition: 0.5s ease-in-out;
+}
+
+.icons ul li a:hover {
+  background-color: #e50000;
+}
+
+div.row ul li a {
+  color: #999999;
+}
+
+.copyright {
+  color: #999999;
+}
+
 div.trailinner {
   background-image: url("../src//assets/images/trialbg.png");
   height: 30vh;
@@ -421,7 +479,6 @@ div.trailinner {
   padding: 50px;
   color: white;
   align-items: center;
-
   background-size: cover;
   border-radius: 10px;
   background-position: center;
@@ -431,21 +488,6 @@ div.trailinner {
   div.box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 860px) {
-  div.explore {
-    padding: 0px 20px;
-    padding-bottom: 100px;
-    padding-top: 50px;
-  }
-
-  div.faq,
-  div.trial,
-  div.devices {
-    padding: 0px 20px;
-    padding-bottom: 100px;
   }
 }
 
@@ -465,6 +507,26 @@ div.trailinner {
 
   .navbar_title {
     padding-bottom: 500px;
+  }
+}
+
+@media (max-width: 860px) {
+  div.explore {
+    padding: 0px 20px;
+    padding-bottom: 100px;
+    padding-top: 50px;
+  }
+
+  div.faq,
+  div.trial,
+  div.devices {
+    padding: 0px 20px;
+    padding-bottom: 100px;
+  }
+  footer.footer {
+    padding: 0px 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }
 
@@ -497,6 +559,11 @@ div.trailinner {
   div.trailinner {
     padding: 30px 20px;
   }
+
+  div.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
@@ -513,6 +580,9 @@ div.trailinner {
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
     margin-top: 60px;
+  }
+  div.row {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   div.trial {

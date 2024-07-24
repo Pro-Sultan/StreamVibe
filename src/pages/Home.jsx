@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Faq from "../Components/Home Component/Faq";
 import Pricing from "../Components/Home Component/Plan";
 import Trial from "../Components/Home Component/Trial";
+import Footer from "../Components/Footer";
 
 
 const Home = () => {
@@ -32,6 +33,7 @@ const Home = () => {
             <Faq />
             <Pricing/>
             <Trial/>
+            <Footer/>
           </div>
         </div>
       )}

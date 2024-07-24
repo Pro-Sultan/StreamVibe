@@ -2,7 +2,7 @@
 
 const Trial = () => {
   return (
-    <div className="trial">
+    <div className="trial" id="trial">
       <div
         className="trailinner"
         data-aos="flip-left"
