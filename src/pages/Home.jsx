@@ -5,6 +5,9 @@ import Devices from "../Components/Devices";
 import Preloader from "../Components/Preloader"; // Create a new Preloader component
 import { useEffect, useState } from "react";
 import Faq from "../Components/Faq";
+import Pricing from "../Components/Plan";
+import Trial from "../Components/Trial";
+
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
@@ -27,6 +30,8 @@ const Home = () => {
             <Explore />
             <Devices />
             <Faq />
+            <Pricing/>
+            <Trial/>
           </div>
         </div>
       )}
