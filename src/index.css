@@ -15,6 +15,14 @@
   margin-bottom: 10px;
 }
 
+.navbar {
+  position: fixed;
+  top: 10;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 nav {
   margin-left: -80px;
 }
