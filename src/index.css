@@ -93,8 +93,13 @@ div.play img {
 
 div.explore {
   padding: 0px 70px;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
   padding-top: 50px;
+}
+
+div.devices {
+  padding: 0px 70px;
+  padding-bottom: 100px;
 }
 
 div.swipe {
@@ -165,31 +170,86 @@ div.category:nth-child(7) img {
 }
 
 .hidden-md-and-up {
-  display: none;
   text-align: center;
   margin: 0 auto;
 }
 
-@media (max-width: 1094px) {
-  .category:nth-child(5),
-  .category:nth-child(4) {
-    display: none;
+.paragraph-text {
+  margin-top: 20px;
+}
+
+div.box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 60px;
+}
+
+div.device-head-small {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+div.device-head-small img {
+  width: 50px;
+}
+
+div.device {
+  background: linear-gradient(90deg, #0f0f0f 99.8%, #290101);
+  background: linear-gradient(to bottom, #290101 4.6%, #0f0f0f);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease-in-out, background 0.9s ease-in;
+}
+
+div.device:hover {
+  transform: translateY(10px);
+  background: linear-gradient(to top, #e50000 100%, #290101);
+}
+
+@media (max-width: 990px) {
+  div.box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 600px) {
+  div.box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  div.device {
+    padding: 30px;
+  }
+}
 @media (max-width: 860px) {
   div.explore {
     padding: 0px 20px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
     padding-top: 50px;
+  }
+
+  div.devices {
+    padding: 0px 20px;
+    padding-bottom: 100px;
   }
 }
 
 @media (max-width: 590px) {
   div.explore {
     padding: 0px 10px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
     padding-top: 50px;
+  }
+
+  div.devices {
+    padding: 0px 10px;
+    padding-bottom: 100px;
   }
 
   .navbar_title {
@@ -208,6 +268,12 @@ div.category:nth-child(7) img {
 
   .navbar-para {
     padding: 0px 50px;
+  }
+
+  div.box {
+    display: grid;
+    gap: 10px;
+    margin-top: 60px;
   }
 }
 

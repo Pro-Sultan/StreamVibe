@@ -6,13 +6,13 @@ import SwipeRightImage from "../assets/images/button-right.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import categories from "../JS/categories";
+import Category from "./Category";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
-import categories from "../JS/categories";
-import Category from "./Category";
 
 const Movies = () => {
   return (
@@ -26,15 +26,16 @@ const Movies = () => {
         </div>
 
         <div className="swipe flex justify-between items-center gap-20 bg-black06">
-          <div className="swipe-button-prev bg-black10">
+          <button className="swipe-button-prev bg-black10">
             <img src={SwipeLeftImage} alt="" />
-          </div>
+          </button>
           {/* <div className="current move"></div>
           <div className="move"></div>
           <div className="move"></div> */}
-          <div className="swipe-button-next bg-black10">
+
+          <button className="swipe-button-next bg-black10">
             <img src={SwipeRightImage} alt="" />
-          </div>
+          </button>
         </div>
       </div>
 
@@ -68,7 +69,6 @@ const Movies = () => {
             className: "swiper-pagination-custom",
           }}
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
         >
           {categories.map((categories) => (
             <SwiperSlide>
