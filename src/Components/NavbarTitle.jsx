@@ -7,8 +7,10 @@ const NavbarTitle = () => {
 
   return (
     <div className="navbar_title text-white align-middle text-center bg-black10 relative ">
-      <h1 className="text-xxl">The Best Streaming Experience</h1>
-      <p className=" navbar-para">
+      <h1 className="text-xxl" data-aos="fade-down">
+        The Best Streaming Experience
+      </h1>
+      <p className=" navbar-para" data-aos="fade-down">
         StreamVibe is the best streaming experience for watching your favorite
         movies and shows on demand, anytime, anywhere. With StreamVibe, you can
         enjoy a wide variety of content, including the latest blockbusters,
@@ -17,6 +19,7 @@ const NavbarTitle = () => {
       </p>
 
       <button
+        data-aos="fade-down"
         onClick={handleClick}
         className="bg-red45 text-white small-play-button font-bold"
       >

@@ -6,7 +6,7 @@ import Types from "../JS/Types";
 const Devices = () => {
   return (
     <div className="devices bg-black10 text-white">
-      <div className="device-head">
+      <div className="device-head" data-aos="fade-right">
         <h1 className="text-xl">
           We Provide you streaming experience across various devices.
         </h1>

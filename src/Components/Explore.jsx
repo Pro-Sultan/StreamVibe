@@ -18,14 +18,17 @@ const Movies = () => {
   return (
     <div className="explore bg-black10 text-white">
       <div className="explore-header flex justify-between">
-        <div className="explore-head">
+        <div className="explore-head" data-aos="fade-right">
           <h1 className="text-xl">Explore our wide variety of categories</h1>
           <p className="explore-para text-grey60">
             Whether you're looking for a comedy to make you laugh.
           </p>
         </div>
 
-        <div className="swipe flex justify-between items-center gap-20 bg-black06">
+        <div
+          className="swipe flex justify-between items-center gap-20 bg-black06"
+          data-aos="fade-right"
+        >
           <button className="swipe-button-prev bg-black10">
             <img src={SwipeLeftImage} alt="" />
           </button>
