@@ -4,6 +4,7 @@ import NavbarTitle from "../Components/NavbarTitle";
 import Devices from "../Components/Devices";
 import Preloader from "../Components/Preloader"; // Create a new Preloader component
 import { useEffect, useState } from "react";
+import Faq from "../Components/Faq";
 
 const Home = () => {
   const [loaded, setLoaded] = useState(false);
@@ -25,6 +26,7 @@ const Home = () => {
             <NavbarTitle />
             <Explore />
             <Devices />
+            <Faq />
           </div>
         </div>
       )}

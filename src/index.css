@@ -97,6 +97,15 @@ div.explore {
   padding-top: 50px;
 }
 
+div.faq {
+  padding: 0px 70px;
+  padding-bottom: 100px;
+}
+
+div.faq-header {
+  display: flex;
+  justify-content: space-between;
+}
 div.devices {
   padding: 0px 70px;
   padding-bottom: 100px;
@@ -114,6 +123,8 @@ div.swipe {
   cursor: pointer;
   transition: 0.3s ease-in;
   border-radius: 5px;
+  outline: none;
+  border: none;
 }
 
 div.categories {
@@ -224,11 +235,73 @@ div.device:hover {
   color: white;
 }
 
-.preloader span {
-  font-size: 48px;
-  font-weight: bold;
-
+.preloader span img{
+  margin-top: 67px;
   margin-right: 10px;
+}
+.preloader span {
+  font-size: 40px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.question-button button {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+div.faq-questions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 40px;
+}
+
+div.faq-questions h1 {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+p.faq-para {
+  color: #999999;
+  margin-top: 10px;
+}
+
+div.faq-content {
+  display: flex;
+  gap: 10px;
+}
+
+div.faqi {
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #e50000;
+  transition: 0.1s ease-in-out;
+}
+
+div.faqi button{
+  border: none;
+  outline: none;
+}
+div.faq-question {
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+div.faq-question img {
+  width: 40px;
+}
+
+button.sign img {
+  width: 20px;
 }
 
 @media (max-width: 990px) {
@@ -255,6 +328,11 @@ div.device:hover {
     padding-top: 50px;
   }
 
+  div.faq {
+    padding: 0px 20px;
+    padding-bottom: 100px;
+  }
+
   div.devices {
     padding: 0px 20px;
     padding-bottom: 100px;
@@ -266,6 +344,11 @@ div.device:hover {
     padding: 0px 10px;
     padding-bottom: 100px;
     padding-top: 50px;
+  }
+
+  div.faq {
+    padding: 0px 10px;
+    padding-bottom: 100px;
   }
 
   div.devices {
@@ -324,6 +407,13 @@ div.device:hover {
   }
   .navbar-para {
     padding: 0px 0px;
+  }
+  div.faq-header {
+    display: block;
+  }
+
+  div.faq-questions {
+    grid-template-columns: repeat(1, 1fr);
   }
 
   div.logo a img {

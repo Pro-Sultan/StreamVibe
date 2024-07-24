@@ -78,7 +78,10 @@ const Movies = () => {
               <Category key={categories.title} {...categories} />
             </SwiperSlide>
           ))}
-          <div className="swiper-pagination hidden-md-and-up"></div>
+          <div
+            className="swiper-pagination hidden-md-and-up"
+            data-aos="flip-left"
+          ></div>
         </Swiper>
       </div>
     </div>

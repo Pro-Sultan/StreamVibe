@@ -8,6 +8,13 @@ const Preloader = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
+        <span className="text-red45"> <img src="../src/assets/images/logo-2.png" alt="" /></span>
+      </motion.div>
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeInOut" }}
+      >
         <span className="text-red45">S</span>
       </motion.div>
       <motion.div
