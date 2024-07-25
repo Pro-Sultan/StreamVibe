@@ -1,5 +1,5 @@
 import Explore from "../Components/Home Component/Explore";
-import Navbar from "../Components/Home Component/Navbar";
+import Header from "../Components/Home Component/Header";
 import NavbarTitle from "../Components/Home Component/NavbarTitle";
 import Devices from "../Components/Home Component/Devices";
 import Preloader from "../Components/Home Component/Preloader"; // Create a new Preloader component
@@ -25,7 +25,7 @@ const Home = () => {
         <Preloader />
       ) : (
         <div>
-          <Navbar />
+          <Header />
           <div className="others">
             <NavbarTitle />
             <Explore />

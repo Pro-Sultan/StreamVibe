@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/Logo.png";
-import PlayButton from "../../assets/images/Play-Video-Button-2.png";
 import Toggle from "../../assets/images/toggle.png";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import Links from "../../JS/Links";
-import Lenis from "@studio-freight/lenis";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -17,22 +15,6 @@ const Navbar = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const lenis = new Lenis();
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-
-  const { scrollYProgress } = useScroll();
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.01,
-  });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, setIsLoading] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -103,107 +85,93 @@ const Navbar = () => {
   }, [setIsMenuOpen, setIsSearchOpen, setIsNotificationsOpen]);
 
   return (
-    <div className="navbar-head bg-navbar-head-image bg-cover h-screen w-full relative mx-auto p-4">
-      <motion.div className="progress-bar bg-red45" style={{ scaleX }} />
-      <div
-        className="navbar flex justify-between px-20 py-6"
-        data-aos="fade-up"
-      >
-        <div className="logo">
-          <Link to="/">
-            <motion.img
-              src={Logo}
-              alt=""
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            />
-          </Link>
-        </div>
-
-        <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
-          <ul className="flex space-x-3">
-            {Links.map((link, index) => (
-              <Link to={link.href} key={index}>
-                <li>{link.label}</li>
-              </Link>
-            ))}
-          </ul>
-        </nav>
-
-        <motion.nav
-          initial={{
-            x: isMenuOpen ? 0 : "-100%",
-            boxShadow: isMenuOpen
-              ? "0px 10px 20px rgba(0,0,0,0.2)"
-              : "0px 0px 0px rgba(0,0,0,0)",
-          }}
-          animate={
-            isMenuOpen
-              ? { x: 0, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }
-              : { x: "-100%", boxShadow: "0px 0px 0px rgba(0,0,0,0)" }
-          }
-          transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="nav-links z-50 block tablet:block  w-full text-grey bg-black06 items-center absolute top-60 bottom-0 right-0 left-0 overflow-hidden"
-        >
-          <ul className="tablet:block space-y-7 tablet:h-screen align-middle text-center">
-            {Links.map((link, index) => (
-              <motion.li
-                key={index}
-                initial={{
-                  x: isMenuOpen ? 0 : -20,
-                  opacity: isMenuOpen ? 1 : 0,
-                }}
-                animate={
-                  isMenuOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
-                }
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <Link to={link.href}>{link.label}</Link>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.nav>
-
-        <div className="right_bar flex space-x-5 items-center">
-          <CiSearch
-            className="search-icon cursor-pointer text-white"
-            onClick={handleSearchClick}
+    <div className="navbar flex justify-between px-20 py-6" data-aos="fade-up">
+      <div className="logo">
+        <Link to="/">
+          <motion.img
+            src={Logo}
+            alt=""
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
           />
-          {isSearchOpen && (
-            <input
-              type="search"
-              placeholder="Search..."
-              className="search-input bg-white text-grey px-3 py-2 rounded-lg absolute top-[105px] right-[130px]"
-            />
-          )}
-          <IoIosNotificationsOutline
-            className="notification-icon cursor-pointer text-white"
-            onClick={handleNotificationsClick}
-          />
-          {isNotificationsOpen && (
-            <div className="notification-box absolute bg-white rounded-lg p-3 shadow-md">
-              <h5 className="text-lg font-bold mb-2">Notifications</h5>
-              <ul>
-                <li className="text-lg">Notification 1</li>
-                <li className="text-lg">Notification 2</li>
-                <li className="text-lg">Notification 3</li>
-              </ul>
-            </div>
-          )}
-        </div>
-
-        <div className="toggle" onClick={toggleMenu}>
-          <img src={Toggle} alt="" className="cursor-pointer" />
-        </div>
+        </Link>
       </div>
 
-      <div className="play absolute">
-        <img
-          src={PlayButton}
-          alt=""
-          className="play_video_button cursor-pointer mx-auto"
+      <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
+        <ul className="flex space-x-3">
+          {Links.map((link, index) => (
+            <Link to={link.href} key={index}>
+              <li>{link.label}</li>
+            </Link>
+          ))}
+        </ul>
+      </nav>
+
+      <motion.nav
+        initial={{
+          x: isMenuOpen ? 0 : "-100%",
+          boxShadow: isMenuOpen
+            ? "0px 10px 20px rgba(0,0,0,0.2)"
+            : "0px 0px 0px rgba(0,0,0,0)",
+        }}
+        animate={
+          isMenuOpen
+            ? { x: 0, boxShadow: "0px 10px 20px rgba(0,0,0,0.2)" }
+            : { x: "-100%", boxShadow: "0px 0px 0px rgba(0,0,0,0)" }
+        }
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="nav-links z-50 block tablet:block h-screen  w-full text-grey bg-black06 items-center absolute top-40 bottom-0 right-0 left-0"
+      >
+        <ul className="tablet:block space-y-7  align-middle text-center">
+          {Links.map((link, index) => (
+            <motion.li
+              key={index}
+              initial={{
+                x: isMenuOpen ? 0 : -20,
+                opacity: isMenuOpen ? 1 : 0,
+              }}
+              animate={
+                isMenuOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }
+              }
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <Link to={link.href}>{link.label}</Link>
+            </motion.li>
+          ))}
+        </ul>
+      </motion.nav>
+
+      <div className="right_bar flex space-x-5 items-center">
+        <CiSearch
+          className="search-icon cursor-pointer text-white"
+          onClick={handleSearchClick}
         />
+        {isSearchOpen && (
+          <input
+            type="search"
+            placeholder="Search..."
+            className="search-input bg-white text-grey px-3 py-2 rounded-lg absolute top-[105px] right-[130px]"
+          />
+        )}
+        <IoIosNotificationsOutline
+          className="notification-icon cursor-pointer text-white"
+          onClick={handleNotificationsClick}
+        />
+        {isNotificationsOpen && (
+          <div className="notification-box absolute bg-white rounded-lg p-3 shadow-md">
+            <h5 className="text-lg font-bold mb-2">Notifications</h5>
+            <ul>
+              <li className="text-lg">Notification 1</li>
+              <li className="text-lg">Notification 2</li>
+              <li className="text-lg">Notification 3</li>
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <div className="toggle" onClick={toggleMenu}>
+        <img src={Toggle} alt="" className="cursor-pointer" />
       </div>
     </div>
   );
