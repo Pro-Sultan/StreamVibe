@@ -137,13 +137,15 @@ const Footer = () => {
         </div>
       </div>
 
-      <div
-        className="copyright"
-        data-aos="flip-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="4000"
-      >
-        <p>Copyright &copy; {currentYear} DevSultan</p>
+      <div>
+        <p
+          className="copyright"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="4000"
+        >
+          Copyright &copy; {currentYear} DevSultan
+        </p>
       </div>
     </footer>
   );
