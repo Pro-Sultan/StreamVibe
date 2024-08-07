@@ -70,9 +70,9 @@ const Faq = () => {
               </div>
               <button className="sign" onClick={() => toggleAnswer(index)}>
                 {showAnswers[index] ? (
-                  <img src="../src/assets/images/minus.png" alt="" />
+                  <img src="/images/minus.png" alt="" />
                 ) : (
-                  <img src="../src/assets/images/plus.png" alt="" />
+                  <img src="/images/plus.png" alt="" />
                 )}
               </button>
             </div>

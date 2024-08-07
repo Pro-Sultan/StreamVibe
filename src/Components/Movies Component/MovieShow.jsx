@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import Small_Play_Button from "../../assets/images/small-play-button.png";
-import Plus from "../../assets/images/plus.png";
-import Thumbs from "../../assets/images/thumbs.png";
-import Volume from "../../assets/images/volume.png";
-import SwipeLeftImage from "../../assets/images/button-left.png";
-import SwipeRightImage from "../../assets/images/button-right.png";
+import Small_Play_Button from "../../../public/images/small-play-button.png";
+import Plus from "../../../public/images/plus.png";
+import Thumbs from "../../../public/images/thumbs.png";
+import Volume from "../../../public/images/volume.png";
+import SwipeLeftImage from "../../../public/images/button-left.png";
+import SwipeRightImage from "../../../public/images/button-right.png";
 import Alert from "@mui/material/Alert";
 import { useState } from "react";
 

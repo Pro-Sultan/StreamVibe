@@ -4,56 +4,56 @@ const faqData = [
     question: "What is StreamVibe?",
     answer:
       "StreamVibe is a streaming service that allows you to watch movies and shows on demand.",
-    image: "../src/assets/images/num1.png",
+    image: "/public/images/num1.png",
   },
   {
     id: 2,
     question: "How much does StreamVibe cost?",
     answer:
       "The cost of StreamVibe varies depending on the subscription plan you choose. You can find more information on our pricing page.",
-    image: "../src/assets/images/num2.png",
+    image: "/public/images/num2.png",
   },
   {
     id: 3,
     question: "What content is available on StreamVibe?",
     answer:
       "StreamVibe offers a wide variety of content, including movies, TV shows, documentaries, and more. You can find a complete list of our available content on our website.",
-    image: "../src/assets/images/num3.png",
+    image: "/public/images/num3.png",
   },
   {
     id: 4,
     question: "How can I watch StreamVibe?",
     answer:
       "You can watch StreamVibe on your computer, phone, tablet, or TV. You can also download our app for easy access.",
-    image: "../src/assets/images/num4.png",
+    image: "/public/images/num4.png",
   },
   {
     id: 5,
     question: "How do I sign up for StreamVibe?",
     answer:
       "You can sign up for StreamVibe on our website or through our app. Simply create an account and choose your preferred subscription plan.",
-    image: "../src/assets/images/num5.png",
+    image: "/public/images/num5.png",
   },
   {
     id: 6,
     question: "What is the StreamVibe free trial?",
     answer:
       "StreamVibe offers a free trial for new users. This allows you to experience all the features of StreamVibe before committing to a subscription.",
-    image: "../src/assets/images/num6.png",
+    image: "/public/images/num6.png",
   },
   {
     id: 7,
     question: "How do I contact StreamVibe customer support?",
     answer:
       "You can contact StreamVibe customer support through our website, app, or by email.",
-    image: "../src/assets/images/num7.png",
+    image: "/public/images/num7.png",
   },
   {
     id: 8,
     question: "What are the StreamVibe payment methods?",
     answer:
       "StreamVibe accepts a variety of payment methods, including credit cards, debit cards, and PayPal.",
-    image: "../src/assets/images/num8.png",
+    image: "/public/images/num8.png",
   },
 ];
 

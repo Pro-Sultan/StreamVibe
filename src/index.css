@@ -487,7 +487,7 @@ div.row ul li a {
 }
 
 div.trailinner {
-  background-image: url("../src//assets/images/trialbg.png");
+  background-image: url("/public/images/trialbg.png");
   height: 30vh;
   width: 100%;
   padding: 50px;
@@ -578,7 +578,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("../src/assets/images/movieshowbg.png");
+  background-image: url("/public/images/movieshowbg.png");
   background-size: cover;
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
@@ -592,7 +592,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("../src/assets/images/movieshowbg3.png");
+  background-image: url("/public/images/movieshowbg3.png");
   background-size: cover;
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }
@@ -605,7 +605,7 @@ div.second-item {
   right: 0;
   max-width: 100%;
   height: 100%;
-  background-image: url("../src/assets/images/movieshowbg5.png");
+  background-image: url("/public/images/movieshowbg5.png");
   background-size: cover;
   filter: brightness(0.5); /* adjust the brightness to your liking */
 }

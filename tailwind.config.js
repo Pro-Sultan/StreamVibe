@@ -14,9 +14,8 @@ export default {
     },
     backgroundImage: {
       "navbar-head-image":
-        "url('./src/assets/images/StreamVibe-Home-Background.png')",
-      "movie-show-bg":
-        "url('./src/assets/images/movieshowbg.png')",
+        "url('/images/StreamVibe-Home-Background.png')",
+      "movie-show-bg": "url('/images/movieshowbg.png')",
     },
     screens: {
       tablet: "-800px",

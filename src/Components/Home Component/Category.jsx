@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import IconRight from "../../assets/images/Icon-right.png";
+import IconRight from "/images/Icon-right.png";
 
 const handleClick = () => {
   window.open("/movies", "_blank");

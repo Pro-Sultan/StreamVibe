@@ -111,7 +111,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="../src/assets/images/facebook.png" alt="" />
+                  <img src="/images/facebook.png" alt="" />
                 </a>
               </li>
               <li>
@@ -120,7 +120,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="../src/assets/images/twitter.png" alt="" />
+                  <img src="/images/twitter.png" alt="" />
                 </a>
               </li>
               <li>
@@ -129,7 +129,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src="../src/assets/images/linkedin.png" alt="" />
+                  <img src="/images/linkedin.png" alt="" />
                 </a>
               </li>
             </ul>
