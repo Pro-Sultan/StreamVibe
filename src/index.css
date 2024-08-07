@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lexend+Giga:wght@100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Poppins", sans-serif;
   /* overflow-x: hidden; */
   scrollbar-color: #0f0f0f transparent;
 }
@@ -36,6 +38,10 @@ nav ul li:hover {
   background-color: #1a1a1a;
   padding: 10px;
   border-radius: 10px;
+}
+
+.nav-links {
+  border: 1px solid #5c5959;
 }
 
 div.toggle {
@@ -492,6 +498,248 @@ div.trailinner {
   background-position: center;
 }
 
+section.movies {
+  background-color: #1a1a1a;
+  padding: 0px 70px;
+  height: 200vh;
+}
+
+section.movies button {
+  border: none;
+  outline: none;
+}
+
+.movies-show-box h1 {
+  font-size: 32px;
+  filter: brightness(3);
+  font-weight: 900;
+}
+
+.movies-show-box p {
+  color: #999999;
+  font-size: 20px;
+  padding: 10px 200px;
+}
+
+.movies-show-container,
+.movies-show-container:nth-child(2),
+.movies-show-container:nth-child(3) {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  position: relative;
+  display: inline-block; /* or block, depending on your layout */
+  max-width: 100%;
+  background-position: center;
+  object-fit: cover;
+  text-align: center;
+  height: 95vh;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.plus,
+.volume,
+.thumbs {
+  padding: 8px;
+  cursor: pointer;
+  width: 40px;
+  outline: none;
+  border: none;
+  transition: 0.3s ease-in;
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  border: none;
+}
+
+.plus:hover,
+.volume:hover,
+.thumbs:hover {
+  background-color: #e50000;
+}
+
+div.collections,
+div.second-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.movies-show-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("../src/assets/images/movieshowbg.png");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide2 .movies-show-container::before {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("../src/assets/images/movieshowbg3.png");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.slide3 .movies-show-container::before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0%;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  background-image: url("../src/assets/images/movieshowbg5.png");
+  background-size: cover;
+  filter: brightness(0.5); /* adjust the brightness to your liking */
+}
+
+.swipe-movies {
+  margin-top: 20px;
+}
+
+.movies-show-box {
+  padding-top: 200px;
+  border-radius: 10px;
+}
+
+.movies-show-box > * {
+  /* target the text elements */
+  position: relative;
+  z-index: 1;
+  color: #fff; /* set the text color to white */
+}
+
+div.vid-tag {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.vid-tag video {
+  height: 90vh;
+  width: 90vh;
+}
+
+.success {
+  width: 300px;
+  position: absolute;
+  top: 100;
+
+  font-size: 17px !important;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.authentication {
+  background-color: #1a1a1a;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+div.authentication form {
+  width: 500px;
+  background-color: #0f0f0f;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+div.authentication form h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+div.existing {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 20px;
+  color: white;
+  text-decoration: underline;
+}
+
+div.authentication form input {
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+div.authentication form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #e50000;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+/* Ensure background color does not change for auto-completed fields */
+input:-webkit-autofill {
+  background-color: #0f0f0f !important; /* Set your desired background color */
+}
+
+p.error {
+  color: #e50000;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.not-found {
+  background-color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 100vh;
+  width: 100%;
+  font-size: 30px;
+}
+
+.not-found .in {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found img {
+  width: 100px;
+  mix-blend-mode: color-dodge;
+}
 @media (max-width: 990px) {
   div.box {
     display: grid;
@@ -572,6 +820,18 @@ div.trailinner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
+  section.movies {
+    background-color: #1a1a1a;
+    padding: 0px 10px;
+    height: 200vh;
+  }
+
+  .movies-show-box p {
+    color: #999999;
+    font-size: 20px;
+    padding: 10px 0px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -600,12 +860,26 @@ div.trailinner {
   div.trailinner {
     padding: 10px;
   }
+
+  div.collections {
+    display: block;
+    gap: 1px;
+  }
+
+  div.collections > button:nth-child(1) {
+    width: 90%;
+  }
+
+  .movies-show-box {
+    padding-top: 150px;
+  }
 }
 
 @media screen and (max-width: 800px) {
   div.swipe {
     display: none;
   }
+
   .category:nth-child(3) {
     display: none;
   }

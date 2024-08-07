@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.5",
     "@react-spring/web": "^9.7.4",
     "@studio-freight/react-lenis": "^0.0.47",
     "aos": "^2.3.4",

@@ -1,28 +1,53 @@
+/* eslint-disable react/no-unescaped-entities */
+// // Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
+import Navbar from "../Components/Navbar";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
+import MovieShow from "../Components/Movies Component/MovieShow";
 
 const Movies = () => {
   return (
-    <div style={{ width: 900, margin: "40px auto" }}>
+    <section className="movies relative">
+      <Navbar />
       <Swiper
-        modules={[Navigation]} 
+        modules={[Navigation, Pagination]}
         spaceBetween={20}
-        slidesPerView={3}
-        navigation
+        slidesPerView={1}
+        navigation={{
+          nextEl: ".swipe-button-next",
+          prevEl: ".swipe-button-prev",
+        }}
+        pagination={{
+          el: ".swiper-pagination",
+          clickable: true,
+          className: "swiper-pagination-custom",
+        }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide className="slide1">
+          <MovieShow />
+        </SwiperSlide>
+
+        <SwiperSlide className="slide2">
+          <MovieShow />
+        </SwiperSlide>
+
+        <SwiperSlide className="slide3">
+          <MovieShow />
+        </SwiperSlide>
+
+        <div className="swiper-pagination hidden-md-and-up"></div>
       </Swiper>
-    </div>
+    </section>
   );
 };
 
