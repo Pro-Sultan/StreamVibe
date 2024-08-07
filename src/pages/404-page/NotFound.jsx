@@ -1,4 +1,4 @@
-import Image404 from "../../../public/images/404.png";
+import Image404 from "/images/404.jpg";
 
 const NotFound = () => {
   return (
