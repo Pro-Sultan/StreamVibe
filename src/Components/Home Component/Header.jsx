@@ -1,4 +1,4 @@
-import PlayButton from "../../../public/images/Play-Video-Button-2.png";
+import PlayButton from "/images/Play-Video-Button-2.png";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Navbar from "../Navbar";

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Logo from "../../public/images/Logo.png";
-import Toggle from "../../public/images/toggle.png";
+import Logo from "/images/Logo.png";
+import Toggle from "/images/toggle.png";
 import { CiSearch } from "react-icons/ci";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { useEffect, useState, useLayoutEffect } from "react";

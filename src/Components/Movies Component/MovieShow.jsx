@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import Small_Play_Button from "../../../public/images/small-play-button.png";
-import Plus from "../../../public/images/plus.png";
-import Thumbs from "../../../public/images/thumbs.png";
-import Volume from "../../../public/images/volume.png";
-import SwipeLeftImage from "../../../public/images/button-left.png";
-import SwipeRightImage from "../../../public/images/button-right.png";
+import Small_Play_Button from "/images/small-play-button.png";
+import Plus from "/images/plus.png";
+import Thumbs from "/images/thumbs.png";
+import Volume from "/images/volume.png";
+import SwipeLeftImage from "/images/button-left.png";
+import SwipeRightImage from "/images/button-right.png";
 import Alert from "@mui/material/Alert";
 import { useState } from "react";
 
@@ -14,17 +14,17 @@ const MovieShow = () => {
     window.open("/support", "_blank");
   };
 
- const [isVisible, setIsVisible] = useState(false);
- const [timer, setTimer] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [timer, setTimer] = useState(null);
 
- const handleLike = () => {
-   setIsVisible(true);
-   setTimer(
-     setTimeout(() => {
-       setIsVisible(false);
-     }, 3000)
-   ); // 3000ms = 3 seconds
- };
+  const handleLike = () => {
+    setIsVisible(true);
+    setTimer(
+      setTimeout(() => {
+        setIsVisible(false);
+      }, 3000)
+    ); // 3000ms = 3 seconds
+  };
 
   return (
     <div className="movies-show-container">

@@ -1,5 +1,5 @@
 
-import Small_Play_Button from "../../../public/images/small-play-button.png"
+import Small_Play_Button from "/images/small-play-button.png"
 
 const NavbarTitle = () => {
   const handleClick = () => {
