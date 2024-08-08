@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import video from "../../public/images/Avengers Endgame _ The Big Three Fight Scenes.mp4";
-import Navbar from "../Components/Navbar";
+import Navbar from "../../Components/Navbar";
 
 const Support = () => {
   return (

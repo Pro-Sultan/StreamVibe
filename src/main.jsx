@@ -1,10 +1,10 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Movies from "./pages/Movies";
-import Subscription from "./pages/Subscription";
-import Support from "./pages/Support";
+import Home from "./pages/Home/Home";
+import Movies from "./pages/Movie/Movies";
+import Subscription from "./pages/Subscription/Subscription";
+import Support from "./pages/Support/Support";
 import Authentication from "./pages/auth/Authentication";
 import NotFound from "./pages/404-page/NotFound";
 
@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/authentication" element={<Authentication />} />
       {/* Define other routes here */}
       <Route path="*" element={<NotFound />} /> {/* 404 route */}
-      
     </Routes>
   </BrowserRouter>
 );
