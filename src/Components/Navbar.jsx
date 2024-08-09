@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "/images/Logo.png";
 import Toggle from "/images/toggle.png";
 import { CiSearch } from "react-icons/ci";
@@ -74,7 +74,7 @@ const Navbar = () => {
   return (
     <div className="navbar flex justify-between px-20 py-6" data-aos="fade-up">
       <div className="logo">
-        <Link to="/">
+        <NavLink to="/">
           <motion.img
             src={Logo}
             alt=""
@@ -82,19 +82,20 @@ const Navbar = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           />
-        </Link>
+        </NavLink>
       </div>
 
       <nav className="nav-links flex text-grey bg-black06 items-center px-3 py-2 rounded-lg">
         <ul className="flex space-x-3">
           {Links.map((link, index) => (
-            <Link
+            <NavLink
               to={link.href}
               key={index}
               target={link.label !== "Home" ? "_blank" : "_self"}
+              className={({ isActive }) => isActive && "active-link"}
             >
               <li>{link.label}</li>
-            </Link>
+            </NavLink>
           ))}
         </ul>
       </nav>
@@ -127,8 +128,9 @@ const Navbar = () => {
               }
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <Link
+              <NavLink
                 to={link.href}
+                className={({ isActive }) => isActive && "active-link"}
                 target={link.label !== "Home" ? "_blank" : "_self"}
                 onClick={(event) => {
                   if (link.label === "Home") {
@@ -139,7 +141,7 @@ const Navbar = () => {
                 }}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             </motion.li>
           ))}
         </ul>

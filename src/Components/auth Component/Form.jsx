@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 
 const Form = () => {
+  localStorage.clear();
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(false);
   const [state, setState] = useState({

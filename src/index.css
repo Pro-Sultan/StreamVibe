@@ -32,11 +32,17 @@ nav {
 nav ul li {
   font-size: 17.5px;
   padding: 10px;
+  transition: 0.2s ease-in-out;
 }
-nav ul li.active,
+
 nav ul li:hover {
-  background-color: #1a1a1a;
+  background-color: #5c5959;
   padding: 10px;
+  border-radius: 10px;
+}
+
+.active-link {
+  background-color: #5c5959; /* Background color for the active link */
   border-radius: 10px;
 }
 
@@ -278,6 +284,10 @@ div.device:hover {
   margin-top: 20px;
 }
 
+.question-button button:hover{
+  background-color: #b11a1a;
+}
+
 .trial-button button {
   padding: 10px;
   border-radius: 5px;
@@ -299,7 +309,10 @@ div.device:hover {
 .plan-button button:hover {
   background-color: #1a1a1a;
 }
-
+.plan-button button:active,
+.plan-button button:visited {
+  background-color: red;
+}
 div.faq-questions {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -707,7 +720,7 @@ div.authentication form button {
 }
 
 div.authentication form button:hover {
-  background-color: #b11a1a !important; 
+  background-color: #b11a1a !important;
 }
 /* Ensure background color does not change for auto-completed fields */
 input:-webkit-autofill {
