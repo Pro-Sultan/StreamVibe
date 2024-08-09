@@ -664,7 +664,7 @@ div.authentication {
 div.authentication form {
   width: 500px;
   background-color: #0f0f0f;
-  padding: 30px;
+  padding: 25px;
   border-radius: 10px;
 }
 
@@ -703,9 +703,12 @@ div.authentication form button {
   outline: none;
   border-radius: 5px;
   font-weight: 600;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
+div.authentication form button:hover {
+  background-color: #b11a1a !important; 
+}
 /* Ensure background color does not change for auto-completed fields */
 input:-webkit-autofill {
   background-color: #0f0f0f !important; /* Set your desired background color */

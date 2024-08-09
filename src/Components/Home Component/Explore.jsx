@@ -71,11 +71,10 @@ const Movies = () => {
             clickable: true,
             className: "swiper-pagination-custom",
           }}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           {categories.map((categories) => (
-            <SwiperSlide>
-              <Category key={categories.title} {...categories} />
+            <SwiperSlide key={categories.title}>
+              <Category {...categories} />
             </SwiperSlide>
           ))}
           <div

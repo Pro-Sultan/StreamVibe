@@ -6,15 +6,15 @@ import Year from "./Year";
 import yearPlans from "../../JS/yearPlans";
 
 const Pricing = () => {
-  const [planType, setPlanType] = useState("monthly")
+  const [planType, setPlanType] = useState("monthly");
 
   const showYearlyPlans = () => {
     setPlanType("yearly");
-  }
+  };
 
-    const showMonthlyPlans = () => {
-      setPlanType("monthly");
-    };
+  const showMonthlyPlans = () => {
+    setPlanType("monthly");
+  };
 
   return (
     <div className="faq bg-black10 text-white">
@@ -28,7 +28,7 @@ const Pricing = () => {
         </div>
 
         <div className="plan-button" data-aos="fade-right">
-          <button className="font-bold monthly" onClick={showMonthlyPlans} >
+          <button className="font-bold monthly" onClick={showMonthlyPlans}>
             Monthly
           </button>
           <button className="font-bold yearly" onClick={showYearlyPlans}>
@@ -38,12 +38,8 @@ const Pricing = () => {
       </div>
       <div className="plans">
         {planType === "monthly"
-          ? plans.map((device) => (
-              <PlanCard key={device.deviceName} {...device} />
-            ))
-          : yearPlans.map((device) => (
-              <Year key={device.deviceName} {...device} />
-            ))}
+          ? plans.map((device) => <PlanCard key={device.price} {...device} />)
+          : yearPlans.map((device) => <Year key={device.price} {...device} />)}
       </div>
     </div>
   );
